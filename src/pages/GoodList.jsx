@@ -8,10 +8,11 @@ export default function GoodList(props) {
         {
                 item.map((elem) => {
                     return (
-                        <Goods addCardToBasket={addCardToBasket} key={elem.id} {...elem}/>
+                        <Goods addCardToBasket={addCardToBasket} key={elem.id} icon={elem.images.icon}  {...elem}/>
+                       
                     )
                 })
             }
-    </>
+      </>
   )
 }

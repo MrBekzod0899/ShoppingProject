@@ -5,7 +5,7 @@ export default function Header() {
     <>
       <nav>
         <div className="nav-wrapper">
-          <a href="#!" className="brand-logo">Game Shopping</a>
+          <a href="#!" className="logo"><span>Game Shopping</span></a>
           <ul id="nav-mobile" className="right">
             <li className='NavItem'><a href="#!">Cars</a></li>
             <li className='NavItem'><a href="#!">Toys</a></li>
@@ -24,6 +24,7 @@ export default function Header() {
                   </Link>
                 </li>
           </ul>
+          <div className="clear"></div>
         </div>
       </nav>
     </>
