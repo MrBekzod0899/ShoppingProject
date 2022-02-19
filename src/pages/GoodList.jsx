@@ -7,7 +7,7 @@ export default function GoodList(props) {
   return (
     <>  
         {
-                item.length===0 ?
+                item.length!==0 ?
                 item.map((elem) => {
                     return (
                         <Goods addCardToBasket={addCardToBasket} key={elem.id} icon={elem.images.icon}  {...elem}/>  

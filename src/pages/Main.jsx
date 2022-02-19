@@ -122,7 +122,7 @@ export default function Main() {
         .catch(err=> {
             setError(true)
         })
-        const newData=dataPlayer.filter((item,index) => index<seeMore )
+        const newData=dataPlayer.filter((item,index) => index<seeMore)
         setGoods(newData)
     }, [seeMore,contextEl,dataPlayer]);
 
