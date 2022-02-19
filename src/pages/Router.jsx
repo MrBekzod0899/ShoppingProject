@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import App from '../App'
+import Error from './Error/Error'
 
 export default function Router() {
   return (
@@ -10,6 +11,7 @@ export default function Router() {
                 <Route path='/en/' element={<App/>}/>
                 <Route  path='/ru/' element={<App/>}/>
                 <Route  path='/ar/' element={<App/>}/>
+                <Route  element={<Error/>}/>
         </Routes>
     </div>
   )

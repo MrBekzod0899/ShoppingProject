@@ -116,16 +116,19 @@ export default function Main() {
         .then(res => res.json())
         .then(data => {
             data.items ?
-            setDataPlayer(data.items) : setError(true)
+            setDataPlayer(data.items) : setError(true);
             setLoading(false)
         })
         .catch(err=> {
             setError(true)
-        })
+        }) 
+    },[contextEl]);
+    
+    useEffect(()=>{
         const newData=dataPlayer.filter((item,index) => index<seeMore)
         setGoods(newData)
-    }, [seeMore,contextEl,dataPlayer]);
-
+    },[dataPlayer,seeMore])
+   
     return (
         <>
             {

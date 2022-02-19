@@ -3,7 +3,6 @@ import Goods from './Goods'
 
 export default function GoodList(props) {
     const {item,addCardToBasket}=props
-    console.log(item)
   return (
     <>  
         {
