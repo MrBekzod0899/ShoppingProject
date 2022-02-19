@@ -93,7 +93,7 @@
         background-color: rgb(245, 245, 245);
     }
     .card-content{
-        height: 15%;
+        height: 13%;
     }
     .card-content p{
         font-size: 18px;
@@ -101,7 +101,7 @@
     }
   
     .card-action{
-        height: 15%;
+        height: 12%;
         display: flex;
         justify-content: space-around;
     }
@@ -131,11 +131,11 @@
         overflow: hidden;
     }
     .card-image{
-        height: 60%;
+        height: 63%;
         background-color: rgb(245, 245, 245);
     }
     .card-content{
-        height: 15%;
+        height: 14%;
         overflow: hidden;
     }
     .card-content p{
@@ -146,7 +146,7 @@
     }
   
     .card-action{
-        height: 25%;
+        height: 23%;
         display: block;
         padding: 5px 10px !important;
     }
