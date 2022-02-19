@@ -1,4 +1,338 @@
-.App {
-  text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+}
+.App{
+   width: 100%; 
+   overflow: hidden;
+   background-color: #575555;
+}
+.main{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+}
+footer{
+    background-color: #0E47A1 !important;
+}
+nav{
+    padding:0 40px;
+    box-sizing: border-box;
+    height: 80px;
+    background-color: #0E47A1;
+}
+.brand-logo{
+    font-size: 40px !important;
+    color: white !important;
+    display: flex;
+    text-align: left;
+    
+}
+nav ul{
+    line-height: 80px;
 }
 
+nav ul li{
+    align-items: center;
+}
+nav ul li a{
+    font-size: 30px;
+    font-weight: 600;
+}
+.language{
+    margin: 0;
+    padding: 0 !important;
+    
+}
+.language a{
+    display: inline;
+    margin: 0 !important;
+    padding: 3px !important;
+    font-size: 18px; 
+    font-weight: 900;
+    border-right: 1px solid #f1f1f1;
+}
+.language a:hover{
+    background-color: aqua;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill),minmax(350px,1fr);
+    gap: 1rem;
+}
+
+.card-action{
+    display: flex;
+    justify-content: space-between;
+}
+.card-action span,button{
+    font-size: 20px;
+    font-weight: bold;
+}
+.card-content span{
+    font-size: 18px;
+    font-weight: 500;
+}
+.card-content p{
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+.shopping-cart{
+    display: flex;
+    justify-content: right;
+    margin: 10px 0;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.shopping-cart .likedItems span{
+    font-size: 30px;
+    padding: 20px;   
+}
+.carts{
+  color: white;
+  border-radius: 10px;
+  padding: 5px;    
+}
+.carts span{
+    font-size:24px;
+}
+.carts span:nth-child(2){
+    font-size: 18px;
+    font-weight: 800;
+}
+.bsk{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+/* basketlist */
+.basketlist{
+    position: fixed;
+    min-height: 400px;
+    background-color: rgb(255, 255, 255);
+    z-index: 5 !important;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    transition: all linear 0.5s;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #474646;
+    display: block;
+}
+.close{
+    position: absolute;
+    font-size: 24px;
+    color: black;
+    top: 1rem;
+    right: 2rem;
+    cursor: pointer;
+}
+.basketlist .col{
+    padding: 20px;
+    width: 100% !important;
+}
+
+.thead th{
+    font-size: 22px !important;
+    border: 1px solid #f1f1f1;
+    text-align: center;
+}
+.basketitem td{
+    font-size: 22px !important;
+    border: 1px solid #f1f1f1;
+    text-align: center;
+}
+.basketitem td:nth-child(3) button{
+    box-sizing: border-box;
+    color: black;
+    cursor: pointer;
+}
+.basketitem td:nth-child(3) button:nth-child(2){
+    color: blue !important;
+}
+.basketitem td:nth-child(5){
+    font-size: 20px;
+    color: red;
+    cursor: pointer;
+}
+.totalPrice{
+    margin-top: 20px;
+    font-size: 24px;
+    display: flex;
+    justify-content: right;
+}
+.totalPrice span:nth-child(2){
+    color: coral;
+    margin-left: 10px;
+    font-weight: 900;
+}
+
+@media (max-width:995px) {
+    .nav-wrapper{
+        display: block;
+    }
+    .NavItem{
+        display: none;
+    }
+    .brand-logo{
+        font-size: 30px !important;  
+        display: block;
+        float: left !important; 
+    }
+    .thead th{
+        font-size: 18px !important;
+        text-align: left;
+        font-weight: 600;
+    }
+    .basketlist{
+        position: fixed;
+        overflow: scroll;
+        min-height: 400px !important;
+        height: calc(100vh - 100px);
+        scroll-behavior: auto;
+        z-index: 5 !important;
+        padding: 10px 10px;  
+        margin: 0;  
+    }
+    .basketlist .col{
+        padding: 20px 3px;
+        margin: 0;
+    }
+
+    .basketitem td {
+        font-size:16px;
+        text-align: center;
+        justify-content: center;
+        padding: 5px 3px;
+    }
+    .basketitem td:nth-child(3) button{
+        font-size: 14px !important;
+        padding: 0 6px;
+    }
+}
+
+@media (max-width:500px) {
+    .close{
+        color: black;
+        top: 0.5rem;
+        right: 1rem;
+    }
+    nav {
+        width: 100%;
+        display: flex;
+        padding: 0;
+        margin: 0;  
+        justify-content: left;
+        align-items: left;
+    }
+    nav .nav-wrapper{
+        width: 100%;
+        display: flex;
+        height: 100%;  
+        text-align: center;
+        justify-content: center;  
+        align-items: center;  
+    }
+    nav .brand-logo{
+        font-size: 28px !important;
+        font-weight: 600;
+        width: 100% !important;
+        position: relative;
+    }
+    .thead th{
+        font-size: 16px !important;
+        text-align: left;
+        font-weight: 600;
+    }
+    .basketlist{
+        position: fixed;
+        overflow: scroll;
+        min-height: 400px !important;
+        height: calc(100vh - 100px);
+        scroll-behavior: auto;
+        z-index: 5 !important;
+        padding: 10px 5px;  
+        margin: 0;      
+    }
+
+    .basketlist .col{
+        padding: 40px 3px;
+        margin: 0;
+    }
+
+    .basketitem td{
+        text-align: center;
+    }
+    .basketitem td:nth-child(3) button{
+        font-size: 16px !important;
+        display: block;
+        width: 100% !important;
+    }
+}
+@media (max-width:375px) {
+    nav {
+        width: 100%;
+        display: flex;
+        padding: 0;
+        margin: 0;  
+    }
+    nav .nav-wrapper{
+        width: 100%;
+        display: flex;
+        height: 100%;  
+        text-align: center;
+        justify-content: center;  
+        align-items: center;  
+    }
+    nav .brand-logo{
+        font-size: 28px !important;
+        font-weight: 600;
+        width: 100% !important;
+        position: relative;
+    }
+    .thead th{
+        font-size: 14px !important;
+        text-align: left;
+        font-weight: 900;
+    }
+    .basketlist{
+        position: fixed;
+        overflow: scroll;
+        min-height: 400px !important;
+        height: calc(100vh - 100px);
+        scroll-behavior: auto;
+        z-index: 5 !important;
+        padding: 10px 5px;  
+        margin: 0;      
+    }
+    .basketlist .col{
+        padding: 40px 3px;
+        margin: 0;
+    }
+    .basketitem td {
+        font-size:14px !important;
+        text-align: center;
+        justify-content: center;
+        padding: 5px 3px;
+        justify-content: center;
+        text-align: center;
+    
+    }
+    .basketitem td:nth-child(3) button{
+        font-size: 14px !important;
+        display: block;
+        margin: 0 auto;
+        
+        width: 80% !important;
+        padding: 0 0px !important;
+    }
+}
+/* basketlist */
