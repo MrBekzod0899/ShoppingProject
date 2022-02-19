@@ -42,7 +42,6 @@ nav ul li a{
 .language{
     margin: 0;
     padding: 0 !important;
-    
 }
 .language a{
     display: inline;
@@ -119,8 +118,10 @@ nav ul li a{
     position: fixed;
     min-height: 400px;
     background-color: rgb(255, 255, 255);
+    overflow: scroll;
+    height: calc(100vh - 100px);
     z-index: 5 !important;
-    padding: 20px 30px;
+    padding: 10px 30px;
     box-sizing: border-box;
     transition: all linear 0.5s;
     border-radius: 10px;
@@ -136,12 +137,12 @@ nav ul li a{
     cursor: pointer;
 }
 .basketlist .col{
-    padding: 20px;
+    padding: 15xpx;
     width: 100% !important;
 }
 
 .thead th{
-    font-size: 22px !important;
+    font-size: 21px !important;
     border: 1px solid #f1f1f1;
     text-align: center;
 }
@@ -154,6 +155,9 @@ nav ul li a{
     box-sizing: border-box;
     color: black;
     cursor: pointer;
+    padding: 20px 15px;
+    padding-top: 0;
+    font-size: 18px;
 }
 .basketitem td:nth-child(3) button:nth-child(2){
     color: blue !important;
@@ -219,7 +223,16 @@ nav ul li a{
     }
 }
 
-@media (max-width:500px) {
+@media (max-width:508px) {
+    .nav-wrapper ul{
+        display: flex;
+    }
+    .language{
+        display: block !important;
+    }
+    .language a{
+        display: inline;
+    }
     .close{
         color: black;
         top: 0.5rem;
@@ -279,24 +292,49 @@ nav ul li a{
 }
 @media (max-width:375px) {
     nav {
-        width: 100%;
+        width: 100% !important;
         display: flex;
-        padding: 0;
-        margin: 0;  
+        height: 100px;
+        padding: 0 !important;
+        margin: 0 !important;  
     }
     nav .nav-wrapper{
         width: 100%;
         display: flex;
         height: 100%;  
-        text-align: center;
-        justify-content: center;  
-        align-items: center;  
+        justify-content: space-between;
+        margin: 0 !important;
+        padding: 0;
+    }
+    .nav-wrapper ul{
+        display: block;
+        line-height: 80px;
+       
+    }
+    .language {
+        display: block !important;
+        width: 70%;
+        margin: 0 auto;
+        padding: 0;
+        margin: 0;
+        font-size: 14px;
+        line-height: 25px;
+    }
+    .language  a{
+        display: block;
+        padding: 2px !important;
+        margin: 0;
+        width: 100% !important;
+        border-right: 1px solid transparent;
+        border-bottom: 1px solid #f1f1f1;
     }
     nav .brand-logo{
-        font-size: 28px !important;
+        font-size: 26px !important;
         font-weight: 600;
         width: 100% !important;
         position: relative;
+        margin: 0;
+        padding: 0;
     }
     .thead th{
         font-size: 14px !important;

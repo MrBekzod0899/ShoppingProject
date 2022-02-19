@@ -4,7 +4,7 @@ export default function Goods(props) {
   const { id, name, description,icon,price,addCardToBasket} = props;
   return (
     <>
-      <div className=" cards col s12 m4 l4 xl3">
+      <div className="cards col s12 m4 l4 xl3">
         <div className="card hoverable"  id={id}>
           <div
             className="card-image"    

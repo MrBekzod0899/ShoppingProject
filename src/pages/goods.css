@@ -79,8 +79,12 @@
 }
 
 @media (max-width:600px) {
+   .main .row{
+       padding:0 20px;
+       box-sizing: border-box;
+   }
     .card{
-        height: 550px !important;
+        height: 500px !important;
         margin: 20px 0;
         overflow: hidden;
     }
@@ -117,13 +121,17 @@
 }
 
 @media (max-width:400px) {
+    .main .row{
+        padding:0 0px;
+        box-sizing: border-box;
+    }
     .card{
-        height: 550px !important;
-        margin: 20px 0;
+        height: 450px !important;
+        margin: 10px 0;
         overflow: hidden;
     }
     .card-image{
-        height: 55%;
+        height: 50%;
         background-color: rgb(245, 245, 245);
     }
     .card-content{
