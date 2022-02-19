@@ -1,0 +1,156 @@
+.card{
+    height: 450px !important;
+    margin: 20px 0;
+    overflow: hidden;
+}
+.card-image{
+    height: 60%;
+    background-color: rgb(245, 245, 245);
+}
+.card-content{
+    height: 20%;
+    overflow: hidden;
+}
+.card-content span{
+    font-size:18px;
+    font-weight: 900;
+}
+.star{
+    margin:0 5px;
+}
+.star i{
+    color: yellow !important;
+}
+.card-content{
+    padding: 10px !important;
+}
+.card-content p{
+    font-size: 18px;
+    overflow: hidden;
+}
+.card-action{
+    height: 20%;
+    padding: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+@media (max-width:950px) {
+    .starandprice{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+    }
+    .starandprice span{
+        font-size: 18px;
+    }
+    .card-action{
+        display: block;
+    }
+    .card-action .btn{
+        display: block;
+        width: 100%;
+    }
+}
+@media (max-width:720px) {
+    .card-content p{
+        font-size: 16px;
+        overflow: hidden;
+    }
+    .card-image{
+        height: 50%;
+        background-color: rgb(245, 245, 245);
+    }
+    .starandprice{
+        display: block;
+    }
+    .starandprice span{
+        margin: 3px;
+        font-size: 20px;
+        display: block;
+    }
+    .card-action{
+        display: block;
+    }
+    .card-action .btn{
+        display: block;
+        width: 100%;
+    }
+}
+
+@media (max-width:600px) {
+    .card{
+        height: 550px !important;
+        margin: 20px 0;
+        overflow: hidden;
+    }
+    .card-image{
+        height: 70%;
+        background-color: rgb(245, 245, 245);
+    }
+    .card-content{
+        height: 15%;
+    }
+    .card-content p{
+        font-size: 18px;
+        overflow: hidden;
+    }
+  
+    .card-action{
+        height: 15%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .card-action .btn{
+        display: inline;
+        font-size: 18px;
+        width: 20%;
+    }
+     .starandprice{
+         display: flex;
+     }
+    .starandprice span{
+        margin: 3px;
+        font-size: 20px;
+        display: inline;
+    }
+}
+
+@media (max-width:400px) {
+    .card{
+        height: 550px !important;
+        margin: 20px 0;
+        overflow: hidden;
+    }
+    .card-image{
+        height: 55%;
+        background-color: rgb(245, 245, 245);
+    }
+    .card-content{
+        height: 18%;
+        margin-top:8px ;
+    }
+    .card-content p{
+        font-size: 18px;
+        overflow: hidden;
+    }
+  
+    .card-action{
+        height: 22%;
+        display: block;
+    }
+    .card-action .btn{
+        display: block;
+        font-size: 18px;
+        width: 100%;
+        margin-top: 5px;
+    }
+     .starandprice{
+         display: block;
+     }
+    .starandprice span{
+        margin: 8px 0;
+        font-size: 20px;
+        display: block;
+    }
+}

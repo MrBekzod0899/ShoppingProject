@@ -1,0 +1,207 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav a{
+    text-decoration: none;
+    font-size: 24px;
+}
+.navbar{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: right;
+    background-color: #0E47A1;
+}
+.labelCheck{
+    color: white;
+    font-size: 30px;
+    line-height: 80px;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    display: none;
+}
+.labelCheck:hover{
+   color:blueviolet;
+   cursor: pointer;
+}
+.navbar-brand{
+    line-height: 80px;
+    margin-left: 50px;
+    font-weight: 500;
+    font-family: sans-serif;
+    text-align: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.navbar-brand a{
+    font-size: 40px;
+    color: white;
+}
+
+.navbar-body {
+    line-height: 80px;
+    justify-items: right;
+    align-items: right !important;
+}
+
+.navbar-body li{
+ display: inline-block;
+ text-decoration: none;
+ text-transform: uppercase;
+ margin: 0 10px;
+}
+
+.navbar-body li a{
+    color: white;
+    font-weight: 600;
+    position: relative;
+}
+.navbar-body li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: all linear 0.8s ;
+}
+.navbar-body li a:hover::after{
+  width: 100%;
+}
+.userIcon{
+    line-height: 80px;
+    padding:0 !important;
+    margin-right: 30px;
+    position: relative;
+}
+.userIcon i{
+    color: black;
+    border-radius: 50%;
+    background-color: white;
+    padding: 10px;
+    font-size: 22px !important;  
+}
+
+.userInfo{
+    position: absolute;
+    bottom: -135px;
+    right: 10px;
+    width: 200px;
+    display: block;
+    background-color: white;
+    transition: all linear 0.5s;
+    border-radius: 8px;
+    z-index: 10;
+    box-shadow: 5px 5px 5px #838583,
+                -5px -5px 5px #888d88;
+}
+
+.userInfoList{
+    z-index: 11;
+    padding-left:10px ;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+.userInfoList li{
+    display: block;
+    color: black;
+    height: 50px !important;
+    line-height: normal;
+}
+.userInfoList li:hover{
+    cursor: pointer;
+}
+.userInfoList li a{
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 26px !important;
+    height: 100%;
+}
+
+/* responsive */
+
+@media (max-width:864px) {
+    .userIcon{
+        line-height: 80px;
+        position: absolute;
+        top: 0;
+        right: 60px;
+        align-items: center;  
+    }
+    .userIcon i{
+        color: black;
+        border-radius: 50%;
+        background-color: white;
+        padding: 10px;
+        font-size: 22px !important;  
+    }
+    #response:checked ~  .navbar-body{
+        width: 100% !important;
+        height: calc(100vh - 80px) !important;
+        position: fixed !important;
+        top: 80px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        background-color: blue;
+        line-height: calc(100vh/6);
+        text-align: center;
+        transition: all linear 1s;
+    }
+    #response:checked ~  .navbar-body li{
+        display: block !important;
+        font-size: 30px;
+    }
+    #response:checked ~  .navbar{
+        position: sticky !important;
+        top: 0 !important;
+        left: 0 !important;
+        z-index: 10 !important;
+    }
+    #response:not(:checked) ~ .navbar-body{
+        width: 0;
+        transition: all linear 1s;
+        top: 80px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: calc(100vh - 80px) !important;
+        position: fixed !important;
+        display: block;
+        overflow: hidden;
+        line-height: calc(100vh/6);
+    }
+    #response:not(:checked) ~ .navbar-body li{
+        display: block;
+    }
+   #response{
+       position: fixed;
+       top: 0 !important; 
+       right: 0 !important;
+       z-index: 12;
+   }
+     
+    .labelCheck{
+        display: inline-block;
+        position: fixed;
+    }
+    #response{
+        position: fixed;
+        top: 0 ;
+        right: 0;
+        display: inline-block;
+        z-index: 12;
+        color: white;
+    }
+} 
