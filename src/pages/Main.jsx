@@ -5,6 +5,7 @@ import Loader from './Loader/Loader';
 import ShoppinCart from './ShoppinCart';
 import { ToastContainer, toast } from 'react-toastify';
 import BasketList from './BasketList';
+import Error from './Error/Error';
 
 
 export default function Main() {
@@ -16,6 +17,7 @@ export default function Main() {
     const [totalPrice, setTotalPrice] = useState(0)
     const [dataPlayer,setDataPlayer]=useState([])
     const [seeMore,setSeeMore]=useState(10)
+    const [error,setError]=useState(false)
 
     const addCardToBasket = (item) => {
         const itemIndex = order.findIndex(orderItem => orderItem.id === item.id)
@@ -113,10 +115,14 @@ export default function Main() {
         })
         .then(res => res.json())
         .then(data => {
-            setDataPlayer(data.items)
+            data.items ?
+            setDataPlayer(data.items) : setError(true)
             setLoading(false)
         })
-        const newData=dataPlayer.filter((item,index)=>index<seeMore)
+        .catch(err=> {
+            setError(true)
+        })
+        const newData=dataPlayer.filter((item,index) => index<seeMore )
         setGoods(newData)
     }, [seeMore,contextEl,dataPlayer]);
 
@@ -124,8 +130,9 @@ export default function Main() {
         <>
             {
             loading ? <Loader /> :
+               error ? <Error/> :
                 <div className='main container-fluid-m container-fluid-l container-sm' >
-                    <div className="row">
+                    <div className="row">       
                         {
                             isShowBasket &&
                             <BasketList
