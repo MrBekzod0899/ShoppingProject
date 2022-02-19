@@ -131,34 +131,40 @@
         overflow: hidden;
     }
     .card-image{
-        height: 50%;
+        height: 60%;
         background-color: rgb(245, 245, 245);
     }
     .card-content{
-        height: 18%;
-        margin-top:8px ;
+        height: 15%;
+        overflow: hidden;
     }
     .card-content p{
-        font-size: 18px;
+        padding: 0;
+        margin: 0;
+        font-size: 16px;
         overflow: hidden;
     }
   
     .card-action{
-        height: 22%;
+        height: 25%;
         display: block;
+        padding: 5px 10px !important;
     }
     .card-action .btn{
         display: block;
-        font-size: 18px;
+        font-size: 14px;
         width: 100%;
-        margin-top: 5px;
     }
      .starandprice{
          display: block;
      }
+     .star{
+         font-size: 14px;
+     }
     .starandprice span{
-        margin: 8px 0;
-        font-size: 20px;
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
         display: block;
     }
 }
