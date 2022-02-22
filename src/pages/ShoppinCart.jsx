@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ShopContext } from '../context'
 
-export default function ShoppinCart(props) {
-    const {items,showBasket}=props
-  
+export default function ShoppinCart() {
+    
+    const {showBasket,order}= useContext(ShopContext)
 
   return (
     <div className='shopping-cart'>
@@ -11,7 +12,7 @@ export default function ShoppinCart(props) {
         </div>
        <div className='carts purple darken-1' onClick={showBasket}>
         <span className=''><i className="fa-solid fa-cart-shopping"></i></span>
-        <span>{items.length}</span>
+        <span>{order.length}</span>
        </div>
     </div>
   )

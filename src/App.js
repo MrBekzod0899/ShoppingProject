@@ -3,13 +3,16 @@ import Header from './pages/Header';
 import Footer from './pages/Footer';
 import Main from './pages/Main';
 import React from 'react';
-function App() {
+import ContextProvider from './context';
 
+function App() {
   return (
     <div className="App">
         <Header />
-        <Main/>
-      <Footer/>
+          <ContextProvider>
+            <Main/>
+          </ContextProvider>
+        <Footer/>
     </div>
   );
 }

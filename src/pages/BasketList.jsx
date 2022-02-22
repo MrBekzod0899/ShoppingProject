@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ShopContext } from '../context'
 import BasketItem from './BasketItem'
 
-export default function BasketList(props) {
-    const { order, showBasket, deleteCardFromBasket,totalPrice } = props
+export default function BasketList() {
+    const { order, showBasket, totalPrice } = useContext(ShopContext)
     return (
         <div className='bsk' onClick={showBasket}>
             <div className='container basketlist hoverable' onClick={e => e.stopPropagation(e)} >
@@ -27,11 +28,8 @@ export default function BasketList(props) {
                                                 order.map((item, index) => {
                                                     return (
                                                         <BasketItem
+                                                            key={index+1}
                                                             index={index}
-                                                            key={item.id}
-                                                            deleteCardFromBasket={deleteCardFromBasket}
-                                                            decrementQuantity={props.decrementQuantity}
-                                                            incrementQuantity={props.incrementQuantity}
                                                             {...item}
                                                         />
                                                     )
