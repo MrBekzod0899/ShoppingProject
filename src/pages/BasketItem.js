@@ -3,7 +3,6 @@ import { ShopContext } from '../context'
 
 export default function BasketItem(props) {
     const {id,name,index,price=0,quantity}=props
-    console.log(price)
     const {deleteCard,incrementQuantity, decrementQuantity}=useContext(ShopContext)
         
     return (  

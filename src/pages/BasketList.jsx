@@ -2,8 +2,9 @@ import React, { useContext } from 'react'
 import { ShopContext } from '../context'
 import BasketItem from './BasketItem'
 
-export default function BasketList() {
-    const { order, showBasket, totalPrice } = useContext(ShopContext)
+export default function BasketList({total}) {
+    const { order, showBasket } = useContext(ShopContext)
+
     return (
         <div className='bsk' onClick={showBasket}>
             <div className='container basketlist hoverable' onClick={e => e.stopPropagation(e)} >
@@ -37,7 +38,7 @@ export default function BasketList() {
                                             }
                                         </tbody>
                                     </table>
-                                    <p className='totalPrice'><span>Total Price:</span><span>{totalPrice}<b>$</b></span></p>
+                                    <p className='totalPrice'><span>Total Price:</span><span>{total}<b>$</b></span></p>
                                 </div>
                                 : <h4>Items not found</h4>
                         }

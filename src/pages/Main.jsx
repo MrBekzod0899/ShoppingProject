@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useState } from 'react'
 import { API_KEY } from '../config';
 import GoodList from './GoodList';
@@ -7,18 +8,26 @@ import { ToastContainer, } from 'react-toastify';
 import BasketList from './BasketList';
 import Error from './Error/Error';
 import { ShopContext } from '../context';
-
+import { MainContext } from '../MainContext';
 
 export default function Main() {
-    
-    const {setGoods,goods,filterData,isShowBasket}=useContext(ShopContext)
-    const contextEl = document.location.pathname.substring(1, document.location.pathname.length - 1)
+    const [language]=useContext(MainContext)
+    const {setGoods,goods,filterData,isShowBasket,showMore,seeMore,order}=useContext(ShopContext)
     const [loading, setLoading] = useState(true);
-    const [error,setError]=useState(false)
+    const [error,setError]=useState(false);
+    const [totalPrice,setTotalPrice]=useState(0)
 
+    useEffect(()=>{
+        let prices=0;
+            order.length &&
+                order.forEach((item) => {
+                    prices+=item.quantity*item.price
+            })
+            setTotalPrice(prices)
+    },[order])
 
     useEffect(() => {
-        fetch(`https://fortniteapi.io/v2/items/list?lang=${contextEl}`, {
+        fetch(`https://fortniteapi.io/v2/items/list?lang=${language}`, {
             headers: {
                 Authorization: API_KEY
             }
@@ -32,13 +41,12 @@ export default function Main() {
         .catch(err=> {
             setError(true)
         })
-
-    },[contextEl]);
+    },[language]);
     
     useEffect(()=>{
-        const newData=goods.filter((item,index) => index<10)
+        const newData=goods.filter((item,index) => index<showMore)
         filterData(newData)
-    },[goods])
+    },[goods,showMore])
 
     return (
         <>
@@ -50,6 +58,7 @@ export default function Main() {
                         {
                             isShowBasket &&
                             <BasketList
+                              total={totalPrice}
                             />
                         }
                         <ToastContainer />
@@ -63,7 +72,7 @@ export default function Main() {
             <div className="container-fluid">
             <div className="row">
                 <div className="col l12 m12 s11">
-                <div style={{display:'flex', paddingRight:'10px', width:'100%',justifyContent:'right',textAlign:'right'}}> <button style={{textAlign:'right'}}  className='btn blue dark3' >See More</button></div>
+                <div style={{display:'flex', paddingRight:'10px', width:'100%',justifyContent:'right',textAlign:'right'}}> <button style={{textAlign:'right'}}  className='btn blue dark3' onClick={seeMore} >See More</button></div>
                     </div>
                 </div> 
             </div>
